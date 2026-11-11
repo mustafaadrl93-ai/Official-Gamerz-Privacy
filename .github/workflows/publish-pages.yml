@@ -1,0 +1,45 @@
+name: Publish Gamerz legal website
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: gamerz-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout public legal pages
+        uses: actions/checkout@v4
+      - name: Validate and stage public HTML only
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public-site
+          for page in index.html privacy.html privacy-en.html terms.html terms-en.html delete-account.html; do
+            test -s "$page"
+            grep -qi "Gamerz" "$page"
+            cp "$page" public-site/
+          done
+          touch public-site/.nojekyll
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload public website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public-site
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
