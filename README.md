@@ -18,4 +18,4 @@ Expected public URLs *after activation*:
 - https://mustafaadrl93-ai.github.io/Official-Gamerz-Privacy/privacy-en.html
 - https://mustafaadrl93-ai.github.io/Official-Gamerz-Privacy/delete-account.html
 
-**Launch blocker:** A real, verified public support/privacy email and an external account-deletion request channel have not been supplied/tested. Current deletion page is informational only. Do not submit its link as a functional Google Play account-deletion request mechanism until email contact and processing are ready. This is not a security or legal compliance certification.
+**Operational requirement:** Confirm the public pages stay accessible, test mailbox receipt/replies, and verify end-to-end account/media deletion in the deployed backend before public launch. The legal pages are transparency documents, not a guarantee that every deletion workflow is fully deployed or legally certified.
