@@ -17,6 +17,9 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout public legal pages
         uses: actions/checkout@v4
@@ -31,10 +34,8 @@ jobs:
             cp "$page" public-site/
           done
           touch public-site/.nojekyll
-      - name: Configure and enable GitHub Pages
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - name: Upload public website
         uses: actions/upload-pages-artifact@v4
         with:
