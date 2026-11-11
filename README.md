@@ -11,7 +11,7 @@ Public bilingual legal-information site for the Gamerz Android app. **This repos
 
 ## Activate GitHub Pages
 
-In this repository: **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**.
+In this repository: **Settings → Pages → Build and deployment → Source: GitHub Actions**. GitHub Pages must be enabled by the repository owner: the app integration cannot create the site (GitHub returned `Resource not accessible by integration`). After selection, open **Actions → Publish Gamerz legal website → Run workflow → Run workflow**. The workflow deploys only six public HTML pages and checks them separately.
 
 Expected public URLs *after activation*:
 - https://mustafaadrl93-ai.github.io/Official-Gamerz-Privacy/privacy.html
