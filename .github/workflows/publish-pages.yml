@@ -31,8 +31,10 @@ jobs:
             cp "$page" public-site/
           done
           touch public-site/.nojekyll
-      - name: Configure GitHub Pages
+      - name: Configure and enable GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Upload public website
         uses: actions/upload-pages-artifact@v4
         with:
