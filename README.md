@@ -1,21 +1,19 @@
-# Gamerz | قيمرز — Official Legal Pages
+# Gamerz | قيمرز — official privacy and legal pages
 
-Public bilingual legal-information site for the Gamerz Android app. **This repository contains no private app source code, user data, keystore, or API secrets.**
+The public legal-information website for the Gamerz Android gaming community. Only public HTML and the publication workflows belong in this repository; **no private application source, credentials, Firebase data, upload keys or keystore files**.
 
-## Pages
-- [سياسة الخصوصية](./privacy.html)
-- [Privacy Policy](./privacy-en.html)
+## Public pages
+- [سياسة الخصوصية](./privacy.html) — updated 12 November 2026
+- [Privacy Policy](./privacy-en.html) — updated 12 November 2026
 - [شروط الاستخدام](./terms.html)
 - [Terms of Use](./terms-en.html)
-- [حذف الحساب والبيانات](./delete-account.html)
+- [حذف الحساب والبيانات / Account deletion](./delete-account.html)
 
-## Activate GitHub Pages
+Public URL: https://mustafaadrl93-ai.github.io/Official-Gamerz-Privacy/
 
-In this repository: **Settings → Pages → Build and deployment → Source: GitHub Actions**. GitHub Pages must be enabled by the repository owner: the app integration cannot create the site (GitHub returned `Resource not accessible by integration`). After selection, open **Actions → Publish Gamerz legal website → Run workflow → Run workflow**. The workflow deploys only six public HTML pages and checks them separately.
+## Publication and operational checks
+GitHub Pages is configured through the repository's **Publish Gamerz legal website** Actions workflow on pushes to `main`. The publisher should verify that each URL is reachable over HTTPS and displays the newest revision. The website is static and does not take a user's password or identity tokens.
 
-Expected public URLs *after activation*:
-- https://mustafaadrl93-ai.github.io/Official-Gamerz-Privacy/privacy.html
-- https://mustafaadrl93-ai.github.io/Official-Gamerz-Privacy/privacy-en.html
-- https://mustafaadrl93-ai.github.io/Official-Gamerz-Privacy/delete-account.html
+Privacy and external account-deletion requests use the public contact **official.gamerz.app@gmail.com**. The operator must verify that the mailbox receives messages and that account/data deletion requests are processed successfully; this website cannot itself authenticate a user, delete Firestore data, or purge third-party image caches.
 
-**Operational requirement:** Confirm the public pages stay accessible, test mailbox receipt/replies, and verify end-to-end account/media deletion in the deployed backend before public launch. The legal pages are transparency documents, not a guarantee that every deletion workflow is fully deployed or legally certified.
+The policy accurately describes Firebase, Supabase, historic image providers and data retention. Publication of a policy is not proof that an untested backend deletion worker or regulator-specific requirement has been satisfied. The app's public Data safety declarations must match real behavior.
